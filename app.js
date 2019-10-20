@@ -3,8 +3,10 @@ const app = express();
 const mongoose = require('mongoose');
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
+const userRoutes = require('./api/routes/user');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+
 
 //connect to mongodb
 mongoose.connect(process.env.DATABASE,
@@ -48,6 +50,7 @@ app.use((res,req,next)=>{
 //Route middleware to handle requests
 app.use('/products',productRoutes);
 app.use('/orders',orderRoutes);
+app.use('/user',userRoutes);
 
 //handle incoming errors - assign properties for message, status
 app.use((req,res,next)=>{

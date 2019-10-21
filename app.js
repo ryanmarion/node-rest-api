@@ -16,7 +16,7 @@ mongoose.connect(process.env.DATABASE,
   }
 );
 
-//Use morgan for logging requests to console
+//Use morgan for logging http requests to console
 app.use(morgan('dev'));
 
 //set uploads to be a public path

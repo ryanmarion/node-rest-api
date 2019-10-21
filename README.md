@@ -13,6 +13,7 @@ Author: Ryan Marion
 - Cross-Origin Resource Sharing (CORS) functionality handled by appending correct headers
 
 ## User:
+- User data model includes email (unique) and password, encryped for security purposes
 - Authentication is handled using JSON Web Tokens (JWT) - a JWT lifespan is 1 hour before re-login and generation of a new token is required
 - Endpoints at the /singup, /login, and /{userId} paths
 - Handles GET, POST, and DELETE operations on users

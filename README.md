@@ -40,6 +40,7 @@ Author: Ryan Marion
 - This was a project mainly used to demonstrate the functionality of the API, so no automated testing was baked in
 - All testing was done on a local server - this could lead to unforseen issues when deploying to a production environment, though CORS has been considered by appending the appropriate headers
 - Manual testing performed using Postman to generated requests to the API on the local NodeJS server
+- [Postman - Platform for API development](https://www.getpostman.com/)
 - Entries to database go through validation prior to being entered
 
 ## Further Improvements

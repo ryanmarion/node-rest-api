@@ -21,7 +21,7 @@ Author: Ryan Marion
 - The /{userId} endpoint will hanndle a DELETE method on a user - JWT is required for this operation.
 
 ## Products API:
-- The Product data model consists of an _id (unique), name, price, and an option to attach a product image associated with a product.
+- The Product data model consists of an _id (unique), name, price, and a product image associated with a given product.
 - API endpoints at the /products or /products/{id} paths
 - The /products endpoint allows for GET and POST methods to get all products and create new products
 - The /prodcuts/{productId} endpoint allows for GET, PATCH, and DELETE methods when accessing individual products

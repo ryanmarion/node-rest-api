@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const checkAuth = require('../middleware/check-auth');
+const Product = require('../models/products');
+const mongoose = require('mongoose');
 const uploadFileSizeLimit = 1024*1024*5; //5MB limit for image uplaoding associated with products
 
 const ProductsController = require('../controllers/products');
@@ -39,7 +41,7 @@ const upload = multer({
 router.get('/', ProductsController.products_get_all);
 
 //add a new product :)
-router.post('/', checkAuth, upload.single('productImage'), ProductsController.product_create_product);
+router.post('/', checkAuth, upload.single('productImage'), ProductsController.products_create_product);
 
 //grab info off a product based on an id
 router.get('/:productId', ProductsController.products_get_product);

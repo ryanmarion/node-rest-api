@@ -33,7 +33,7 @@ exports.products_get_all = (req,res,next)=>{
   });
 };
 
-exports.products_create_product = (req,res,next)=>{
+exports.products_create_product = (req,res,next) => {
   console.log(req.file);
 
   //build out a product obj based on the model defined in the Product schema
@@ -66,7 +66,7 @@ exports.products_create_product = (req,res,next)=>{
       error:err
     })
   });
-};
+}
 
 exports.products_get_product = (req,res,next)=>{
   const id = req.params.productId;
@@ -91,15 +91,14 @@ exports.products_get_product = (req,res,next)=>{
       } else{
         res.status(404).json({
           message:'No valid entry found for provided id'
-        });
+        })
       }
     })
     .catch(err => {
       console.log(err);
       res.status(500).json({error:err});
     });
-
-};
+}
 
 exports.products_update_product = (req,res,next)=>{
   const id = req.params.productId;

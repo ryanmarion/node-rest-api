@@ -40,7 +40,7 @@ const upload = multer({
 //grab a list of all the products
 router.get('/', ProductsController.products_get_all);
 
-//add a new product :)
+//add a new product
 router.post('/', checkAuth, upload.single('productImage'), ProductsController.products_create_product);
 
 //grab info off a product based on an id

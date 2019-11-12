@@ -9,7 +9,7 @@ exports.products_get_all = (req,res,next)=>{
     //config the repsonse to be more informative
     const response = {
       count:docs.length,
-      prodcuts:docs.map(doc=>{
+      products:docs.map(doc=>{
         return {
           name:doc.name,
           price:doc.price,

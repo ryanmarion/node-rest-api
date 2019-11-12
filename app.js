@@ -7,6 +7,8 @@ const userRoutes = require('./api/routes/user');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
+const dotenv = require('dotenv');
+dotenv.config();
 
 //connect to mongodb
 mongoose.connect(process.env.DATABASE,
@@ -17,7 +19,9 @@ mongoose.connect(process.env.DATABASE,
 );
 
 //Use morgan for logging http requests to console
-app.use(morgan('dev'));
+if(process.env.NODE_ENV !== 'test'){
+  app.use(morgan('dev'));
+}
 
 //set uploads to be a public path
 app.use('/uploads',express.static('uploads'));
@@ -27,7 +31,7 @@ app.use(bodyParser.urlencoded({
   extended:false
 }));
 
-//gimme the JSON! I want the JSON!
+//grab JSON off the body
 app.use(bodyParser.json());
 
 //add some headers for CORS
@@ -59,6 +63,7 @@ app.use((req,res,next)=>{
   next(err);
 });
 
+//catch all errors
 app.use((err,req,res,next)=>{
   res.status(err.status || 500);
   res.json({
